@@ -140,11 +140,12 @@ public class TFIDF {
                     System.out.println(synonym[j] + "," + calculator.idf(documentList, synonym[j]));
                     fw.write(synonym[j] + "," + calculator.idf(documentList, synonym[j]) + "\n");
                 }
-                /*
-                //TF-IDF(暫且不用到)
+                //IDF 目標Target
                 if (entityID[i].equals("C")) {
-
+                    System.out.println(synonym[j] + "," + calculator.idf(documentList, synonym[j]));
+                    fw.write(synonym[j] + "," + calculator.idf(documentList, synonym[j]) + "\n");
                 }
+                /*
                 //TF-IDF(暫且不用到)
                 if (entityID[i].equals("D")) {
 

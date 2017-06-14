@@ -186,6 +186,10 @@ public class Target {
         if (i.equals("Nb") || i.equals("Nc")) {
             return true;
         }
+        //信福貸
+        if (i.equals("VC")) {
+            return true;
+        }
         return false;
     }
     /**
@@ -223,6 +227,10 @@ public class Target {
             return true;
         }
         if (i.equals("VH") && ii.equals("VA")) {
+            return true;
+        }
+        // 預借現金
+        if (i.equals("VD") && ii.equals("Na")) {
             return true;
         }
         return false;
@@ -384,6 +392,10 @@ public class Target {
         }
         // 分期之單筆
         if ((i.equals("Na")) && (ii.equals("DE")) && (iii.equals("A")) && (iv.equals("Na"))) {
+            return true;
+        }
+        // 「一次性預借現金密碼」
+        if ((i.equals("Na")) && (ii.equals("VD")) && (iii.equals("Na")) && (iv.equals("Na"))) {
             return true;
         }
         return false;

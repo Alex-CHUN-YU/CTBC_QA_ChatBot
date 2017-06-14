@@ -386,7 +386,9 @@ public class DA {
     public String getTarget() throws IOException {
         ArrayList<String> t = Target.getTarget(pos);
         String getTarget = "";
+        ArrayList<String> qwTemp = new ArrayList<String>();
         for (int i = 0; i < t.size(); i++) {
+            //System.out.println(t.get(i));
             wordClassification(Entity.ENTITY_ID_TARGET, t.get(i)); // check dictionary
         }
         for (int i = 0; i < eventPOS.size(); i++) {
@@ -397,10 +399,18 @@ public class DA {
                     getTarget = eventPOS.get(i).getWord();
                     doc.add(getTarget);
                 } else {
-                    getTarget += eventPOS.get(i).getWord();
+                    qwTemp.add(eventPOS.get(i).getWord());
+                    //getTarget += eventPOS.get(i).getWord();
                     doc.add(eventPOS.get(i).getWord());
                 }
             }
+        }
+        //public ArrayList<String>
+        if (!getTarget.equals("")) {
+            qwTemp.add(getTarget);
+        }
+        if (qwTemp.size() > 1) {
+            getTarget = ra.getWord(qwTemp);
         }
         return getTarget;
     }
@@ -485,6 +495,7 @@ public class DA {
         ArrayList<String> t = Target.getTarget(pos);
         ArrayList<String> temp = new ArrayList<String>();
         for (int i = 0; i < t.size(); i++) {
+            //System.out.println(t.get(i));
             wordClassification(Entity.ENTITY_ID_FEATURES, t.get(i)); // check dictionary
         }
         for (int i = 0; i < eventPOS.size(); i++) {
