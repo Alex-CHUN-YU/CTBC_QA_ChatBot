@@ -73,9 +73,7 @@ public class BM25 {
                     entity.ner(str);
                     doc = new ArrayList<String>();
                     doc = entity.getDoc();
-                    //撠���隞賣��隞嗉��慢orpus蝯虫�TF��蝞�
                     demoDocument.addAll(doc);
-                    //撠���隞賣��隞嗉��慢orpus蝯虫�IDF��蝞�
                     documentList.add(doc);
                     map.put(questionnumber, str);
                     questionnumber++;
@@ -153,7 +151,7 @@ public class BM25 {
     private static ArrayList<String> terms = new ArrayList<String>();
 
     /**
-     * Test Document(�游����隞嗉��箔���doc閮�蝞�TF).
+     * Test Document.
      */
     private static ArrayList<String> demoDocument = new ArrayList<String>();
 
