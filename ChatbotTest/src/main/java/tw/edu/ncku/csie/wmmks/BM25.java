@@ -72,10 +72,10 @@ public class BM25 {
             while (((str = read.readLine()) != null)) {
                     entity.ner(str);
                     doc = new ArrayList<String>();
-                    doc = entity.getTermProduce();
-                    //將這份文件視為Corpus給予TF運算
+                    doc = entity.getDoc();
+                    //撠���隞賣��隞嗉��慢orpus蝯虫�TF��蝞�
                     demoDocument.addAll(doc);
-                    //將這份文件視為Corpus給予IDF運算
+                    //撠���隞賣��隞嗉��慢orpus蝯虫�IDF��蝞�
                     documentList.add(doc);
                     map.put(questionnumber, str);
                     questionnumber++;
@@ -153,7 +153,7 @@ public class BM25 {
     private static ArrayList<String> terms = new ArrayList<String>();
 
     /**
-     * Test Document(整個文件視為一個doc計算TF).
+     * Test Document(�游����隞嗉��箔���doc閮�蝞�TF).
      */
     private static ArrayList<String> demoDocument = new ArrayList<String>();
 
@@ -171,7 +171,7 @@ public class BM25 {
             DA qterm = new DA();
             terms = new ArrayList<String>();
             qterm.ner(question);
-            terms = qterm.getTermProduce();
+            terms = qterm.getDoc();
             int counter = 1;
             int id = 0;
             double score = 0;

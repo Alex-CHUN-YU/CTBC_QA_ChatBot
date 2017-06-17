@@ -109,7 +109,7 @@ public class TFIDF {
                 //System.out.println(entity.getTermProduce());
                 /*ArrayList<String> template = new ArrayList<>(
                             Arrays.asList(entity.getTermProduce().split("\\+")));*/
-                doc = entity.getTermProduce();
+                doc = entity.getDoc();
                 //將這份文件視為Corpus給予TF運算
                 demoDocument.addAll(doc);
                 //將這份文件視為Corpus給予IDF運算
