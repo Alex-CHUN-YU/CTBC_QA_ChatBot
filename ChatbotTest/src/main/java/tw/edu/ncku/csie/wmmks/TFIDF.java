@@ -52,7 +52,7 @@ public class TFIDF {
             }
         }
         //count + 1 avoid infinity
-        return Math.log(corpus.size() / (count + 1));
+        return Math.log(corpus.size()/ (count));
     }
 
     /**
@@ -74,7 +74,7 @@ public class TFIDF {
     /**
      * Doc Of Corpus.
      */
-    private static ArrayList<String> doc = new ArrayList<String>();
+    private ArrayList<String> doc = new ArrayList<String>();
 
     /**
      * Test Document(整個文件視為一個doc計算TF).
@@ -102,7 +102,6 @@ public class TFIDF {
             DA entity = new DA();
             //data into ArryList
             while ((str = read.readLine()) != null) {
-                System.out.println(str);
                 entity.ner(str);
                 doc = new ArrayList<String>();
                 //每句話，NER後的 QW ACT TARGET FEATURE
@@ -110,11 +109,17 @@ public class TFIDF {
                 /*ArrayList<String> template = new ArrayList<>(
                             Arrays.asList(entity.getTermProduce().split("\\+")));*/
                 doc = entity.getDoc();
+                System.out.println(str + " doc:" + doc);
                 //將這份文件視為Corpus給予TF運算
                 demoDocument.addAll(doc);
                 //將這份文件視為Corpus給予IDF運算
                 documentList.add(doc);
             }
+            //System.out.print("Start");
+            for (int i = 0; i <documentList.size(); i++){
+            	System.out.println(documentList.get(i));
+            }
+            
             String termWeight  = path + fileSeparator + "\\src\\main\\resources\\TermWeight.txt";
             FileWriter fw = new FileWriter(termWeight);
             //calculate TF or IDF

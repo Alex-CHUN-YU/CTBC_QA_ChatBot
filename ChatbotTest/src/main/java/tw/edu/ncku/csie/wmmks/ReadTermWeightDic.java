@@ -26,7 +26,7 @@ public class ReadTermWeightDic {
 
     /**
      * Constructor.
-     * @throws IOException ����靘�憭�
+     * @throws IOException IOException
      */
     public ReadTermWeightDic() throws IOException {
         File file = new File(".");

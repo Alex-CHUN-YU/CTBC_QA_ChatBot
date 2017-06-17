@@ -273,6 +273,13 @@ public class DA {
      */
     @SuppressWarnings("rawtypes")
 	public void ner(final String sentence) throws IOException {
+        //Renew
+        entity = new ArrayList<Tuple<String, String>>();
+        pos = new ArrayList<Tuple<String, String>>();
+        DA.doc = new ArrayList<String>();
+        revisePOS = new ArrayList<Tuple<String, String>>();
+        // CKIP POS
+        POS ws = new POS();
         //filter stopWord
         userSentence = sentence;
         Iterator iterator = stopWordSet.iterator();
@@ -310,15 +317,9 @@ public class DA {
                 }
             }
         }
-        for (int i = 0; i < revisePOS.size(); i++) {
+        /*for (int i = 0; i < revisePOS.size(); i++) {
         	System.out.println("WORD:" + revisePOS.get(i).getWord() + " POS:" + revisePOS.get(i).getPos());
-        }
-        //Renew
-        entity = new ArrayList<Tuple<String, String>>();
-        pos = new ArrayList<Tuple<String, String>>();
-        DA.doc = new ArrayList<String>();
-        // CKIP POS
-        POS ws = new POS();
+        }*/
         pos = ws.seg(userSentence);
         //After POS and revise POS
         for (int i = 0; i < pos.size(); i++) {
@@ -333,13 +334,13 @@ public class DA {
         		revisePOS.add(pair);
         	}
         }
-        for (int i = 0; i < revisePOS.size(); i++) {
+        /*for (int i = 0; i < revisePOS.size(); i++) {
         	System.out.println("WORD1:" + revisePOS.get(i).getWord() + " POS1:" + revisePOS.get(i).getPos());
-        }
+        }*/
         // Extract Event
         target = getTarget();
         feature = getFeature();
-        doc.addAll(feature);
+        //doc.addAll(feature);
         qw = getQuestionWord();
         act = getAct();
     }
@@ -349,7 +350,6 @@ public class DA {
      * @return sentence template
      */
     public ArrayList<String> getDoc() {
-        //System.out.println(doc);
         return doc;
     }
 
@@ -377,15 +377,18 @@ public class DA {
             }
         //Check POS QW
         for (int i = 0; i < entity.size(); i++) {
+        	//System.out.println("1." + entity.get(i).getWord()+ "2."+entity.get(i).getPos());
             if (entity.get(i).getPos().equals(Entity.ENTITY_ID_QUESTION)
                     && (questionWord.indexOf(entity.get(i).getWord()) <= -1)
                     && (target.indexOf(entity.get(i).getWord()) <= -1)) {
                 if ((entity.get(i).getWord().length() >= questionWord.length())
                         && (entity.get(i).getWord().indexOf(questionWord) > -1)) {
                     questionWord = entity.get(i).getWord();
+                    //System.out.println(questionWord);
                     doc.add(questionWord);
                 } else {
                     qwTemp.add(entity.get(i).getWord());
+                    //System.out.println(entity.get(i).getWord());
                     doc.add(entity.get(i).getWord());
                 }
             }
@@ -394,6 +397,11 @@ public class DA {
         if (!questionWord.equals("")) {
             qwTemp.add(questionWord);
         }
+        /*System.out.println("QW靠北工程師");
+        for (int i=0;i<doc.size();i++)
+        {
+        	System.out.println(doc.get(i));
+        }*/
         //Compare Priority
         if (qwTemp.size() > 1) {
             questionWord = readTermWeightDic.getWord(qwTemp);
@@ -427,6 +435,7 @@ public class DA {
         }
         //Check POS ACT
         for (int i = 0; i < entity.size(); i++) {
+        	//System.out.println("1." + entity.get(i).getWord() + entity.get(i).getPos());
             //don't repeat ACT and 所存在的(act不能存在於 QW and Target)可以不用..
             if (entity.get(i).getPos().equals(Entity.ENTITY_ID_ACT)
                     && (actionWord.indexOf(entity.get(i).getWord()) <= -1)
@@ -454,6 +463,11 @@ public class DA {
         if (!actionWord.equals("")) {
             actTemp.add(actionWord);
         }
+        /*System.out.println("Act靠北工程師");
+        for (int i=0;i<doc.size();i++)
+        {
+        	System.out.println(doc.get(i));
+        }*/
         if (actTemp.size() > 1) {
             actionWord = readTermWeightDic.getWord(actTemp);
         }
@@ -466,7 +480,7 @@ public class DA {
      * @throws IOException if something goes wrong
      */
     public String getTarget() throws IOException {
-        ArrayList<String> t = Target.getTarget(pos);
+        ArrayList<String> t = Target.getTarget(revisePOS);
         String targetWord = "";
         ArrayList<String> qwTemp = new ArrayList<String>();
         for (int i = 0; i < t.size(); i++) {
@@ -479,10 +493,12 @@ public class DA {
                 if ((entity.get(i).getWord().length() >= targetWord.length())
                         && (entity.get(i).getWord().indexOf(targetWord) > -1)) {
                     targetWord = entity.get(i).getWord();
+                    //System.out.println("1."+targetWord);
                     doc.add(targetWord);
                 } else {
                     qwTemp.add(entity.get(i).getWord());
                     //getTarget += eventPOS.get(i).getWord();
+                    //System.out.println("2."+entity.get(i).getWord());
                     doc.add(entity.get(i).getWord());
                 }
             }
@@ -491,6 +507,11 @@ public class DA {
         if (!targetWord.equals("")) {
             qwTemp.add(targetWord);
         }
+        /*System.out.println("Target靠北工程師");
+        for (int i = 0;i<doc.size();i++)
+        {
+        	System.out.println(doc.get(i));
+        }*/
         if (qwTemp.size() > 1) {
             targetWord = readTermWeightDic.getWord(qwTemp);
         }
@@ -504,7 +525,7 @@ public class DA {
      */
     public ArrayList<String> getFeature() throws IOException {
         String featureWord = "";
-        ArrayList<String> t = Target.getTarget(pos);
+        ArrayList<String> t = Target.getTarget(revisePOS);
         ArrayList<String> temp = new ArrayList<String>();
         for (int i = 0; i < t.size(); i++) {
             //System.out.println(t.get(i));
@@ -515,8 +536,20 @@ public class DA {
                     && (target.indexOf(entity.get(i).getWord()) <= -1)) {
                 featureWord = entity.get(i).getWord();
                 temp.add(featureWord);
+                int tempNumber = doc.size();
+                for (int j = 0; j < doc.size(); j++)
+                {
+                    if (!doc.get(j).equals(featureWord)) {
+                    	tempNumber--;
+                    }
+                }
+                if (tempNumber == 0) {
+                	doc.add(featureWord);
+                	//System.out.println("增加成功:" + featureWord);
+                }
             }
         }
+        
         return temp;
     }
 }
