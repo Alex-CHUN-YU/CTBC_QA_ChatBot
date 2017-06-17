@@ -115,11 +115,6 @@ public class TFIDF {
                 //將這份文件視為Corpus給予IDF運算
                 documentList.add(doc);
             }
-            //System.out.print("Start");
-            for (int i = 0; i <documentList.size(); i++){
-            	System.out.println(documentList.get(i));
-            }
-            
             String termWeight  = path + fileSeparator + "\\src\\main\\resources\\TermWeight.txt";
             FileWriter fw = new FileWriter(termWeight);
             //calculate TF or IDF
