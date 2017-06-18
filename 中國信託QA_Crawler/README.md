@@ -1,10 +1,10 @@
 # CTBC_Crawler
 CTBC_Crawler主要負責爬取中國信託銀行的Q&A問題，目前以以下兩個網址為爬取對象。
 
-中國信託銀行常見Q&A(CTBC_Crawler1)</br>
+* 中國信託銀行常見Q&A(CTBC_Crawler1)</br>
 https://www.ctbcbank.com/CTCBPortalWeb/appmanager/ebank/rb?_nfpb=true&_pageLabel=TW_RB_CM_creditcard_000164</br>
 
-中國信託銀行常見Q&A(CTBC_Crawler2)</br>
+* 中國信託銀行常見Q&A(CTBC_Crawler2)</br>
 https://www.ctbcbank.com/CTCBPortalWeb/appmanager/ebank/rb?_nfpb=true&_pageLabel=TW_RB_CM_service_000007&_windowLabel=T24004047331358757232751&_nffvid=%2FCTCBPortalWeb%2Fpages%2FcallCenter%2FcallCenterIntro.faces&firstView=true</br>
 
 ## 使用方式
