@@ -13,16 +13,17 @@ Input:</br>
 
 Output:</br>
 * CTBC_Crawl_Result資料夾中CTBC1.json和CTBC2.json兩個JSON檔</br>
-'''
-輸出格式範例:</br>
+
+<p><code>輸出格式範例:</br>
 [</br>
 	{</br>
 	"question": "如何申請預借現金密碼？",</br>
 	"answer": "若您目前尚未設定或已遺忘預借現金密碼，請撥打0800-024-365按1輸入個人基本資料後輸入快撥鍵887由客服人員協助。"</br>
 	},</br>
 	...</br>
-]</br>
-'''
+]</code></p>
+
+
 ## 開發環境
 Python 3.5.2</br>
 pip install requests</br>
