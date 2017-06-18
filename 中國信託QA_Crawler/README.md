@@ -9,8 +9,9 @@ https://www.ctbcbank.com/CTCBPortalWeb/appmanager/ebank/rb?_nfpb=true&_pageLabel
 
 ## 使用方式
 Input:</br>
-1. 執行Main_Demo.py檔</br>
-
+```
+1. 執行Main_Demo.py檔
+```
 Output:</br>
 * CTBC_Crawl_Result資料夾中CTBC1.json和CTBC2.json兩個JSON檔</br>
 
