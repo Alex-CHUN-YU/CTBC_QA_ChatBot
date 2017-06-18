@@ -22,7 +22,7 @@ public class ReadJson {
     public static HashMap<String, String> getQARespond() {
         JSONParser parser = new JSONParser();
         //please change file path
-        String path = "C:\\Users\\alex\\Desktop\\symore\\中國信託QA_Crawler\\CTBC_Crawl_Result";
+        String path = "C:\\Users\\alex\\Desktop\\danGod\\中國信託QA_Crawler\\CTBC_Crawl_Result";
         try {
             Object obj1 = parser.parse(new BufferedReader(
             		new InputStreamReader(new FileInputStream(path

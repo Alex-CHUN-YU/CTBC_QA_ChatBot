@@ -13,7 +13,7 @@ import java.util.Map;
  *
  * TermWeight.
  *
- * @version 1.0 2017ï¿½ï¿½åš™ï¿½4åš™è¸è•­27åš™è¸è•­
+ * @version 1.0 2017¦~4¤ë27¤é
  * @author NCKU WMMKS LAB
  *
  */

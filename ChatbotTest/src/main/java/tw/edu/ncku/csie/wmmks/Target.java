@@ -1,4 +1,4 @@
-package tw.edu.ncku.csie.wmmks;
+﻿package tw.edu.ncku.csie.wmmks;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Get target and feature.
  *
- * @version 1.0 2017撟�4��30��
+ * @version 1.0 2017年4月30日
  * @author NCKU LAB
  *
  */
