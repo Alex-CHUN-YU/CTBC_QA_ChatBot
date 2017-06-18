@@ -13,7 +13,7 @@ import java.util.Map;
  *
  * TermWeight.
  *
- * @version 1.0 2017撟�4��27��
+ * @version 1.0 2017��嚙�4嚙踝蕭27嚙踝蕭
  * @author NCKU WMMKS LAB
  *
  */
@@ -58,7 +58,7 @@ public class ReadTermWeightDic {
                 max = word.get(i + 1);
             }
             } catch(Exception e) {
-            	System.out.println("this word not exist");
+            	//System.out.println("this word not exist");
             }
         }
         return max;

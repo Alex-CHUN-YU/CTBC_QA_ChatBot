@@ -159,6 +159,11 @@ public class BM25 {
      * Storage question.
      */
     private static Map<Integer, String> map = new HashMap<Integer, String>();
+    
+    /**
+     * Storage question and answer
+     */
+    private static HashMap<String, String> qaRespond = ReadJson.getQARespond();
 
     /**
      * Rank Answer By BM25.
@@ -183,6 +188,11 @@ public class BM25 {
                     }
                 counter++;
                 }
-            System.out.println("Your Question is:" + id + "." + map.get(id));
+            System.out.println("Your Question is:" + id + "." + map.get(id).toString());
+            //Output Answer
+            Object str = map.get(id);
+            System.out.println("Your Answer is:" + qaRespond.get(str));
     }
 }
+
+

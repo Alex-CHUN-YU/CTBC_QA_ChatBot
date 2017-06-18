@@ -29,7 +29,7 @@ public class WmmksIntentProducer implements IntentProducer {
      */
     public static void main(final String[] args) throws IOException {
         // TODO Auto-generated method stub
-        //BM25 question = new BM25();
+        BM25 question = new BM25();
         WmmksIntentProducer wmmksIntentProducer = new WmmksIntentProducer();
         System.out.println("Hello ~ My name is chatbot ^^ ");
         while (true) {
@@ -37,11 +37,12 @@ public class WmmksIntentProducer implements IntentProducer {
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
         DialogueAnalysis intent = wmmksIntentProducer.produce(sentence);
-        //question.rankBM25(sentence);
+        System.out.println("取出的Entity格式:");
         System.out.print("QW(" + intent.getQuestionWord() + ") ");
         System.out.print("Act(" + intent.getAct() + ") ");
         System.out.print("Target(" + intent.getTarget() + ") ");
         System.out.println("Feature(" + intent.getFeatures() + ") ");
+        question.rankBM25(sentence);
         }
     }
 
