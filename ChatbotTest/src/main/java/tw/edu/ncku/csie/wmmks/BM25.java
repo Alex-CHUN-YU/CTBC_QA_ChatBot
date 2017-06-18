@@ -1,4 +1,4 @@
-﻿package tw.edu.ncku.csie.wmmks;
+package tw.edu.ncku.csie.wmmks;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -188,10 +188,15 @@ public class BM25 {
                     }
                 counter++;
                 }
-            System.out.println("Your Question is:" + id + "." + map.get(id).toString());
-            //Output Answer
-            Object str = map.get(id);
-            System.out.println("Your Answer is:" + qaRespond.get(str));
+            try {
+                System.out.println("Your Question is:" + id + "." + map.get(id).toString());
+                //Output Answer
+                Object str = map.get(id);
+                System.out.println("Your Answer is:" + qaRespond.get(str));
+            } catch(Exception e) {
+            	System.out.println("No sentence Matche");
+            }
+
     }
 }
 
