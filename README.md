@@ -1,5 +1,5 @@
 # CTBC ChatBot Q&A Test
-CTBC ChatBot Q&A Test 主要以中國信託 問答集為聊天對象。ChatbotTest\TestFile.txt 中的問句為Train之資料集，是由中國信託Crawler所爬取下來的例句，由於題目有些敘述不清，故必須做些人工修正。</br>
+CTBC ChatBot Q&A Test 主要以中國信託問答集為聊天對象。ChatbotTest\TestFile.txt 中的問句為Train之資料集，是由中國信託Crawler所爬取下來的例句，由於題目有些敘述不清，故必須做些人工修正。</br>
 
 ## 使用方式
 Input:</br>
