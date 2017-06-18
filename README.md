@@ -5,8 +5,8 @@ ChatbotTest\TestFile.txt 中的問句為Train之資料集，是由中國信託Cr
 ## 使用方式
 Input:</br>
 ```
-執行WmmksIntentProducer.java檔
-輸入句子(EX:如何申請預借現金密碼？)
+1.執行WmmksIntentProducer.java檔
+2.輸入句子(EX:如何申請預借現金密碼？)
 ```
 Output:</br>
 ```
