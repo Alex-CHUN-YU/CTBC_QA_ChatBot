@@ -37,7 +37,7 @@ public class WmmksIntentProducer implements IntentProducer {
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
         DialogueAnalysis intent = wmmksIntentProducer.produce(sentence);
-        System.out.println("取出的Entity格式:");
+        System.out.println("Extract Entity format:");
         System.out.print("QW(" + intent.getQuestionWord() + ") ");
         System.out.print("Act(" + intent.getAct() + ") ");
         System.out.print("Target(" + intent.getTarget() + ") ");

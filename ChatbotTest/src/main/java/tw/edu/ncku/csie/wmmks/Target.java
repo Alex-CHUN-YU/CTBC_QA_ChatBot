@@ -12,11 +12,11 @@ import java.util.ArrayList;
  */
 public class Target {
     /**
-     * ������雿輻�函���斗�瑟��璅�.
+     * 處理時使用的判斷旗標.
      */
     private static int       flag, skip, comma = 0;
     /**
-     * �詨��閰���閰��賂�瘙箏�vo�臬�阡����.
+     * 數動詞名詞數，決定vo是否開啟.
      */
     private static int       countn = 0, countv = 0;
     /**
@@ -36,23 +36,23 @@ public class Target {
      */
     public static ArrayList<String> getTarget(final ArrayList<POS.Tuple<String, String>> pos)
             throws IOException {
-        //vo瘙箏��臬�衣�肖opair ��閮�1=open.
+        //vo決定是否用vopair 預設1=open.
         int vo = 1;
         ArrayList<POS.Tuple<String, String>> w = pos;
         ArrayList<String> target = new ArrayList<String>();
         ArrayList<String> fe = new ArrayList<String>();
-        // �脣�交�詨��閰���閰��貉艘��
+        // 進入數動詞名詞數迴圈
         for (int i = 0; i < w.size(); i++) {
             count(w.get(i).getPos());
         }
         for (int i = 0; i < w.size() - 1; i++) {
             delCount(w.get(i).getPos(), w.get(i + 1).getPos(), i, w.size());
         }
-        // �寞����閰���閰��豢捱摰��臬�阡����VOPAIR�交��
+        // 根據動詞名詞數決定是否開啟VOPAIR查找
         if (countn == 1 && countv == 1) {
             vo = 0;
         }
-        // ��憪��斗�瑁�
+        // 開始判斷詞
         for (int i = 0; i < w.size(); i++) {
             if (skip == 0) {
                 if (i + 1 < w.size()) {
@@ -70,7 +70,7 @@ public class Target {
                             w.get(i + 2).getPos())) {
                         target.add(w.get(i).getWord() + w.get(i + 1).getWord()
                                 + w.get(i + 2).getWord());
-                        skip = 3;
+                        skip = 1;
                     }
                 }
                 if (i + 3 < w.size()) {
@@ -96,7 +96,7 @@ public class Target {
                                 + w.get(i + 2).getWord());
                         skip = 3;
                     }
-                    // ��瘨��芸��頧�撣喃誨蝜� �芸��頧�撣喃誨蝜�
+                    // 取消自動轉帳代繳 自動轉帳代繳
                     if ((w.get(i).getPos().equals("VC")) && (w.get(i + 1).getPos().equals("VH"))
                             && (w.get(i + 2).getPos().equals("Nv"))
                             && (w.get(i + 3).getPos().equals("Na"))
@@ -127,7 +127,7 @@ public class Target {
                 if (i + 1 < w.size() && vo == 1) {
                     if (doubleVerbTarget(w.get(i).getPos(), w.get(i + 1).getPos())) {
                         target.add(w.get(i).getWord() + w.get(i + 1).getWord());
-                        skip = 2;
+                        skip = 1;
                         flag = 1;
                     }
                 }
@@ -136,7 +136,7 @@ public class Target {
                             && (w.get(i + 2).getPos().equals("Na")) && vo == 1) {
                         target.add(w.get(i).getWord() + w.get(i + 1).getWord()
                                 + w.get(i + 2).getWord());
-                        skip = 3;
+                        skip = 1;
                         flag = 1;
                     }
                 }
@@ -171,6 +171,7 @@ public class Target {
         for (int i = 0; i < fe.size(); i++) {
             target.add(fe.get(i));
         }
+        //System.out.println(target);
         return target;
     }
     /**
@@ -186,8 +187,12 @@ public class Target {
         if (i.equals("Nb") || i.equals("Nc")) {
             return true;
         }
-        //靽∠�鞎�
+        //信福貸
         if (i.equals("VC")) {
+            return true;
+        }
+        //刷卡
+        if (i.equals("VA")) {
             return true;
         }
         if (i.equals("N")) {
@@ -203,14 +208,14 @@ public class Target {
      * @return true or false
      */
     private static Boolean doubleTarget(final String i, final String ii) {
-        // for �桅����閰�
+        // for 普通名詞
         if (((i.equals("A")) && (ii.equals("Na") || ii.equals("Nb")))) {
             return true;
         }
         if ((i.equals("Na") || i.equals("Nv")) && ((ii.equals("Na")) || (ii.equals("Nv")))) {
             return true;
         }
-        // �芸�� ���芷���閰晞���芾���閰晞��敺抵店����蝣潭���乓��SIM�∼��皞Ｙ像甈�
+        // 自停 、自願停話、自行停話、復話、號碼攜入、SIM卡、溢繳款
         if (i.equals("P") && ii.equals("VHC")) {
             return true;
         }
@@ -232,8 +237,12 @@ public class Target {
         if (i.equals("VH") && ii.equals("VA")) {
             return true;
         }
-        // �����暸��
+        // 預借現金
         if (i.equals("VD") && ii.equals("Na")) {
+            return true;
+        }
+        // 日限額
+        if (i.equals("Nf") && ii.equals("Na")) {
             return true;
         }
         return false;
@@ -246,48 +255,52 @@ public class Target {
      * @return true or false
      */
     private static Boolean doubleFeature(final String i, final String ii) {
-        // ��摰�頧���(VE)(Nv/VC)��甈�憭望��(VE)(VH)
+        // 指定轉接(VE)(Nv/VC)授權失敗(VE)(VH)
         if ((i.equals("VE")) && ((ii.equals("VC")) || (ii.equals("Nv")) || (ii.equals("VH")))) {
             return true;
         }
-        // ��蝘�鈭�摰�(VB)(Na)
+        // 退租事宜(VB)(Na)
         if (i.equals("VB") && (ii.equals("Na"))) {
             return true;
         }
-        // �典��憭�
+        // 在國外
         if (i.equals("P") && (ii.equals("Nep") || ii.equals("Nc"))) {
             return true;
         }
-        // �嗡���摰�
+        // 其他國家
         if (i.equals("Neqa") && (ii.equals("Na"))) {
             return true;
         }
-        // ����敺� ��鞈潸眺敺���蝜單狡敺�
+        // 成功後 、購買後、繳款後
         if ((i.equals("VH") || i.equals("VC") || i.equals("VA")) && (ii.equals("Ng"))) {
             return true;
         }
-        // 撌脩�摰�����撌脩��唾�
+        // 已經完成、已經申請
         if ((i.equals("D")) && (ii.equals("VC") || ii.equals("VF"))) {
             return true;
         }
-        // 銝��拍��
+        // 不適用
         if ((i.equals("D")) && (ii.equals("VJ"))) {
             return true;
         }
-        // �啁��摰Ｘ��
+        // 台灣客服
         if ((i.equals("Nc")) && (ii.equals("Na"))) {
             return true;
         }
-        // �質���
+        // 聽語音
         if ((i.equals("VE")) && (ii.equals("Na"))) {
             return true;
         }
-        // 擗�憿�銝�頞�
+        // 餘額不足
         if ((i.equals("Na")) && (ii.equals("VH"))) {
             return true;
         }
-        // 撣喳�桀����
+        // 帳單分期
         if ((i.equals("Na") && ii.equals("D"))) {
+            return true;
+        }
+        // 24小時
+        if ((i.equals("Neu") && ii.equals("Nf"))) {
             return true;
         }
         return false;
@@ -302,56 +315,64 @@ public class Target {
      */
     private static Boolean tripleTarget(final String i, final String ii,
             final String iii) {
-        // ��蝣澆�舀��(Na)(D)(VC)
+        // 號碼可攜(Na)(D)(VC)
         if ((i.equals("Na")) && (ii.equals("D")) && (iii.equals("VC"))) {
             return true;
         }
         if ((i.equals("Neu")) && (ii.equals("Na")) && (iii.equals("VA"))) {
             return true;
         }
-        // 蝬脩�蝺�銝�蝜單狡/蝺�銝�蝜單狡(Na)(Ncd)(VA)
+        // 網站線上繳款/線上繳款(Na)(Ncd)(VA)
         if ((i.equals("Na")) && (ii.equals("Ncd")) && (iii.equals("VA"))) {
             return true;
         }
-        // �餉店靽�撖�(VCL)(Na)(Nv/VA)
+        // 去話保密(VCL)(Na)(Nv/VA)
         if ((i.equals("VCL")) && (ii.equals("Na")) && ((iii.equals("Nv")) || (iii.equals("VA")))) {
             return true;
         }
-        // �啁��憭批恥��(Nc)(VH)(N)
+        // 台灣大客戶(Nc)(VH)(N)
         if ((i.equals("Nc")) && (ii.equals("VH")) && (iii.equals("N"))) {
             return true;
         }
-        // ��璈��豢��瞍恍��(VC)(Na)(Na)
+        // 手機數據漫遊(VC)(Na)(Na)
         /*
          * if((i.equals("VC"))&&(w.get(i+1).pos.equals("Na"))&&(w.get(i+2). pos.equals("Na"))){
          * return true; }
          */
-        // 閰曹葉���� (Na)(Ng)(VC)
+        // 話中插接 (Na)(Ng)(VC)
         if ((i.equals("Na")) && (ii.equals("Ng")) && (iii.equals("VC"))) {
             return true;
         }
-        // �啁��憭批恥��(Nc)(VH)(Na)
+        // 台灣大客戶(Nc)(VH)(Na)
         if ((i.equals("Nc")) && (ii.equals("VH")) && (iii.equals("Na"))) {
             return true;
         }
-        // for ����wifi��
+        // for 國際wifi通
         if ((i.equals("Nc")) && (ii.equals("FW")) && ((iii.equals("VC")) || (iii.equals("VH")))) {
             return true;
         }
-        // �澆��閰�
+        // 發受話
         if ((i.equals("VD")) && (ii.equals("P")) && (iii.equals("Na"))) {
             return true;
         }
-        // �交�砌�蝬脫憤��
+        // 日本上網漫遊
         if ((i.equals("Nc")) && (ii.equals("VA")) && (iii.equals("VA"))) {
             return true;
         }
-        // 憿�擃�靽∠�券�摨�
+        // 額高信用額度
         if ((i.equals("Nb")) && (ii.equals("Na")) && (iii.equals("Na"))) {
             return true;
         }
-        // 蝝�摰�撣喳�桀����
+        // 約定帳單分期
         if ((i.equals("VE")) && (ii.equals("Na")) && (iii.equals("Na") || iii.equals("D"))) {
+            return true;
+        }
+        // 信用卡權益手冊
+        if ((i.equals("Na")) && (ii.equals("Na")) && (iii.equals("Na"))) {
+            return true;
+        }
+        // 語音回覆系統
+        if ((i.equals("Na")) && (ii.equals("VD")) && (iii.equals("Na"))) {
             return true;
         }
         return false;
@@ -367,37 +388,37 @@ public class Target {
      */
     private static Boolean quadrupleTarget(final String i, final String ii, final String iii,
             final String iv) {
-        // 瞍恍��銵���銝�蝬脫�亦���
+        // 漫遊行動上網日租型
         if (((i.equals("VA")) || (i.equals("Nv"))) && (ii.equals("Na")) && (iii.equals("Nv"))
                 && (iv.equals("Na"))) {
             return true;
         }
-        // �亦���瞍恍��
+        // 日租型漫遊
         if ((i.equals("Nc")) && (ii.equals("VD")) && (iii.equals("Na"))
                 && ((iv.equals("VA") || iv.equals("Nv")))) {
             return true;
         }
-        // �澆��閰梢����
+        // 發受話限制
         if ((i.equals("VD")) && (ii.equals("P")) && (iii.equals("Na")) && (iv.equals("Na"))) {
             return true;
         }
-        // 蝺�銝�������蝝�
+        // 線上門號預約
         if ((i.equals("Na")) && (ii.equals("Ncd")) && (iii.equals("Na")) && (iv.equals("Nv"))) {
             return true;
         }
-        // 蝝�摰��桃�����
+        // 約定單筆分期
         if ((i.equals("VE")) && (ii.equals("A")) && (iii.equals("Na")) && (iv.equals("Na"))) {
             return true;
         }
-        // �瑟��敺芰�啗���撠�獢�
+        // 長期循環轉換專案
         if ((i.equals("Nd")) && (ii.equals("Na")) && (iii.equals("Nv")) && (iv.equals("Na"))) {
             return true;
         }
-        // ����銋��桃�
+        // 分期之單筆
         if ((i.equals("Na")) && (ii.equals("DE")) && (iii.equals("A")) && (iv.equals("Na"))) {
             return true;
         }
-        // ��銝�甈⊥�折�����暸��撖�蝣潦��
+        // 「一次性預借現金密碼」
         if ((i.equals("Na")) && (ii.equals("VD")) && (iii.equals("Na")) && (iv.equals("Na"))) {
             return true;
         }
@@ -420,10 +441,10 @@ public class Target {
         if (i.equals("VC") && (ii.equals("VC"))) {
             return true;
         }
-        if (i.equals("VA") && (ii.equals("VH"))) { // 蝜單狡����
+        if (i.equals("VA") && (ii.equals("VH"))) { // 繳款成功
             return true;
         }
-        if ((i.equals("VHC") && ii.equals("VB"))) { // 蝯�����蝺�
+        if ((i.equals("VHC") && ii.equals("VB"))) { // 結束連線
             return true;
         }
         return false;

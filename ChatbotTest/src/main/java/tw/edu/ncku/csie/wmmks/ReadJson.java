@@ -16,13 +16,13 @@ import org.json.simple.parser.JSONParser;
 public class ReadJson {
 	
     /**
-     * 詞性為一組配對時所需的集合.
+     * Q&A Pair.
      */
     private static HashMap<String, String> qaRespond = new HashMap<String, String>();
     public static HashMap<String, String> getQARespond() {
         JSONParser parser = new JSONParser();
         //please change file path
-        String path = "C:\\Users\\alex\\Desktop\\danGod\\中國信託QA_Crawler\\CTBC_Crawl_Result";
+        String path = "C:\\Users\\alex\\Desktop\\danGod\\CTBC_QA_Crawler\\CTBC_Crawl_Result";
         try {
             Object obj1 = parser.parse(new BufferedReader(
             		new InputStreamReader(new FileInputStream(path
