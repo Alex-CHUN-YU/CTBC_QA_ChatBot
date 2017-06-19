@@ -1,4 +1,4 @@
-ï»¿package tw.edu.ncku.csie.wmmks;
+package tw.edu.ncku.csie.wmmks;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import tw.mt.com.xbot.nlu.IntentProducer;
 
 /**
  *
- * @version 1.0 2017å¹´4æœˆ27æ—¥
+ * @version 1.0 2017¦~4¤ë27¤é
  * @author NCKU WMMKS LAB
  *
  */
@@ -37,7 +37,7 @@ public class WmmksIntentProducer implements IntentProducer {
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
         DialogueAnalysis intent = wmmksIntentProducer.produce(sentence);
-        System.out.println("Extract Entity format:");
+        System.out.println("Extract Entity Format:");
         System.out.print("QW(" + intent.getQuestionWord() + ") ");
         System.out.print("Act(" + intent.getAct() + ") ");
         System.out.print("Target(" + intent.getTarget() + ") ");
