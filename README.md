@@ -6,6 +6,7 @@ Input:</br>
 ```
 1.執行WmmksIntentProducer.java檔
 2.輸入句子(EX:如何申請預借現金密碼？)
+註:CTBC_ChatbotTest\TestFile.txt如有新增句子，可透過TermWeightProduce.java來產生新的權重表。
 ```
 Output:</br>
 ```
