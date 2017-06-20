@@ -1,4 +1,4 @@
-﻿package tw.edu.ncku.csie.wmmks;
+package tw.edu.ncku.csie.wmmks;
 
 import java.util.ArrayList;
 
