@@ -1,4 +1,5 @@
 # CTBC ChatBot Q&A Test
+![demo]()
 CTBC ChatBot Q&A Test 主要以中國信託問答集為聊天對象。CTBC_ChatbotTest\TestFile.txt 中的問句為Train之資料集。問答資料集是由中國信託Crawler(CTBC_ChatbotTest\CTBC_QA_Crawler)所爬取下來的例句，由於題目有些敘述不清，故必須做些人工修正。</br>
 
 ## 使用方式
@@ -14,7 +15,7 @@ Input:</br>
 ```
 Output:</br>
 ```
-
+"若您目前尚未設定或已遺忘預借現金密碼，請撥打0800-024-365按1輸入個人基本資料後輸入快撥鍵887由客服人員協助。"
 ```
 
 ## 開發環境
