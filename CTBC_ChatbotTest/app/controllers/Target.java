@@ -171,7 +171,7 @@ public class Target {
         for (int i = 0; i < fe.size(); i++) {
             target.add(fe.get(i));
         }
-        System.out.println(target);
+        //System.out.println(target);
         return target;
     }
     /**
