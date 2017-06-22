@@ -11,7 +11,6 @@ import java.io.IOException;
 public class HomeController extends Controller {
 
     private static BM25 question=null;
-    //private static WmmksIntentProducer wmmksIntentProducer;
     /**
      * An action that renders an HTML page with a welcome message.
      * The configuration in the <code>routes</code> file means that
@@ -35,14 +34,23 @@ public class HomeController extends Controller {
         }
         //Ajax Authentication
         try {
+
             response().setHeader("Access-Control-Allow-Origin", "*");
             response().setHeader("Allow", "*");
             response().setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
             response().setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Referer, User-Agent");
-            String str = question.rankBM25(sentence);
-            return ok(str);
+            Threshold threshold = new Threshold();
+            boolean pass = threshold.pass(sentence);
+            if(pass) {
+                String str = question.rankBM25(sentence);
+                return ok(str);
+            }
+            else {
+                return ok("I don't understand what you mean!");
+            }
+
         } catch (Exception e) {
-            return ok("WMMKSRESPOND Error");
+            return ok("Connecting Error");
         }
     }
 

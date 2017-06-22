@@ -47,7 +47,7 @@ public class TFIDF {
             }
         }
         //count + 1 avoid infinity
-        return Math.log(corpus.size()/ (count));
+        return Math.log(corpus.size()/ (count + 1));
     }
 
     /**
@@ -110,7 +110,7 @@ public class TFIDF {
                 //將這份文件視為Corpus給予IDF運算
                 documentList.add(doc);
             }
-            String termWeight  = path + fileSeparator + "\\src\\main\\resources\\TermWeight.txt";
+            String termWeight  = path + fileSeparator + "\\app\\resources\\TermWeight.txt";
             FileWriter fw = new FileWriter(termWeight);
             //calculate TF or IDF
             TFIDF calculator = new TFIDF();
