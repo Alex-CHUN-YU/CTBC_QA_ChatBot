@@ -1,5 +1,9 @@
 [
     {
+        "question": "現在外幣匯率多少？",
+        "answer": "https://www.ctbcbank.com/CTCBPortalWeb/toPage?id=TW_RB_CM_ebank_018001"
+    },
+    {
         "question": "如何申請預借現金密碼？",
         "answer": "若您目前尚未設定或已遺忘預借現金密碼，請撥打0800-024-365按1輸入個人基本資料後輸入快撥鍵887由客服人員協助。"
     },
