@@ -1,7 +1,7 @@
 [
     {
         "question": "現在外幣匯率多少？",
-        "answer": "https://www.ctbcbank.com/CTCBPortalWeb/toPage?id=TW_RB_CM_ebank_018001"
+        "answer": "<a href='https://www.ctbcbank.com/CTCBPortalWeb/toPage?id=TW_RB_CM_ebank_018001'  target='_blank'  style='text-decoration:none;'>點選前往外幣匯率"
     },
     {
         "question": "如何申請預借現金密碼？",

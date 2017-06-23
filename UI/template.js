@@ -40,7 +40,7 @@
 			$.ajax
 			(
 				{
-					 url: "http://localhost:9000/WMMKSRespond",
+					 url: "http://localhost:9003/WMMKSRespond",
 					 data: {sentence:textContent},
 					 type:'GET',
 					 error: function(xhr)

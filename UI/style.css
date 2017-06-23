@@ -23,7 +23,7 @@ body {
 }
 
 .top_menu {
-  background-color: #fff;
+  background-color: rgba(60, 142, 153, 0.96);
   width: 100%;
   padding: 20px 0 15px;
   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@ body {
   position: relative;
 }
 .top_menu .buttons .button.close {
-  background-color: #f5886e;
+  background-color: #d9edf7;
 }
 .top_menu .buttons .button.minimize {
   background-color: #fdbf68;
@@ -51,7 +51,7 @@ body {
 }
 .top_menu .title {
   text-align: center;
-  color: #bcbdc0;
+  color: #edeff2;
   font-size: 20px;
 }
 
@@ -71,11 +71,11 @@ body {
   opacity: 0;
 }
 .messages .message.left .avatar {
-  background-color: #f5886e;
+  background-color: rgba(97, 249, 120, 0.73);
   float: left;
 }
 .messages .message.left .text_wrapper {
-  background-color: #ffe6cb;
+  background-color: rgba(126, 194, 161, 0.34);
   margin-left: 20px;
 }
 .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
@@ -83,14 +83,14 @@ body {
   border-right-color: #ffe6cb;
 }
 .messages .message.left .text {
-  color: #c48843;
+  color: #000000;
 }
 .messages .message.right .avatar {
-  background-color: #fdbf68;
+  background-color: rgba(104, 242, 253, 0.51);
   float: right;
 }
 .messages .message.right .text_wrapper {
-  background-color: #c7eafc;
+  background-color: #f8ffd6;
   margin-right: 20px;
   float: right;
 }
@@ -99,7 +99,7 @@ body {
   border-left-color: #c7eafc;
 }
 .messages .message.right .text {
-  color: #45829b;
+  color: #000000;
 }
 .messages .message.appeared {
   opacity: 1;
@@ -107,7 +107,7 @@ body {
 .messages .message .avatar {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 40%;
   display: inline-block;
 }
 .messages .message .text_wrapper {
@@ -137,7 +137,7 @@ body {
 }
 .messages .message .text_wrapper .text {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .bottom_wrapper {
