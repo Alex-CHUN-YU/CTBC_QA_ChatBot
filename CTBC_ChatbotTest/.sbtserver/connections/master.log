@@ -5,3 +5,9 @@ New client attempting to connect on port: 59513-59511
 This client on port 59513 has uuid 1dd0ab6c-1ef4-48ad-98f5-535291d866ca configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
 Connected Clients: play-fork-run-1dd0ab6c-1ef4-48ad-98f5-535291d866ca
 Taking next connection to: 59511
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 8152@DESKTOP-7I1L4KP logs at Fri Jun 23 22:52:07 CST 2017, goodbye.
