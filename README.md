@@ -22,4 +22,4 @@ Play Framework Project</br>
 IDEA Version:IntelliJ IDEA 2017.1.2 x64</br>
 JDK: java version "1.8.0_121"</br>
 Scala Version: 2017.1.19</br>
-註:IDEA, DON'T CHECK DOWNLOAD SBT RESOURCES BOX
+註:IDEA IMPORT PROJECT, DON'T CHECK DOWNLOAD SBT RESOURCES BOX
