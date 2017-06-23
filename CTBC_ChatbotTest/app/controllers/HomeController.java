@@ -11,6 +11,8 @@ import java.io.IOException;
 public class HomeController extends Controller {
 
     private static BM25 question=null;
+
+    private static String[] respond = {"抱歉 ~ 小託我..不太懂你意思 Q3Q","小托我..懇求你再說一次 >3<","我不懂啦~小托不明白 @3@"};
     /**
      * An action that renders an HTML page with a welcome message.
      * The configuration in the <code>routes</code> file means that
@@ -31,6 +33,8 @@ public class HomeController extends Controller {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+
         }
         //Ajax Authentication
         try {
@@ -46,7 +50,7 @@ public class HomeController extends Controller {
                 return ok(str);
             }
             else {
-                return ok("I don't understand what you mean!");
+                return ok(respond[(int)(Math.random()*10)%3]);
             }
 
         } catch (Exception e) {

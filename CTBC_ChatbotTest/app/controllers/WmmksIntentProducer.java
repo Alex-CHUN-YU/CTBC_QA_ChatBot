@@ -45,6 +45,7 @@ public class WmmksIntentProducer implements IntentProducer {
         System.out.print("Target(" + intent.getTarget() + ") ");
         System.out.println("Feature(" + intent.getFeatures() + ") ");
         System.out.println(question.rankBM25(sentence));
+
         }
     }
 

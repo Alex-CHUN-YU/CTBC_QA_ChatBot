@@ -104,7 +104,7 @@
             }
         });
 		
-		firstMessage("Hello, My name is CtbcBot!");
+		firstMessage("你好 ~ 我叫小托很高興為你服務 ^0^");
         /*setTimeout(function () {
             return sendMessage('Hi Sandy! How are you?');
         }, 1000);

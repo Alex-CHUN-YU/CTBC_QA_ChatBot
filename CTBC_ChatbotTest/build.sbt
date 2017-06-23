@@ -20,3 +20,6 @@ libraryDependencies += "org.json" % "json" % "20160810"
 // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
 libraryDependencies += "com.googlecode.json-simple" % "json-simple" % "1.1.1"
 PlayKeys.devSettings := Seq("play.server.http.port" -> "9003")
+
+
+fork in run := true
