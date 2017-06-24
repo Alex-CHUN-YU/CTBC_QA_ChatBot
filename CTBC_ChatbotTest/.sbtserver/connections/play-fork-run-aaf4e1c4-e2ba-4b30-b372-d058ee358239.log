@@ -9278,3 +9278,16 @@ Sending msg to client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239: Detach
 Sending msg to client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239: DetachedLogEvent(LogMessage(debug,> server-post-command-cleanup))
 Sending msg to client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239: ExecutionSuccess(12)
 Sending msg to client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239: DetachedLogEvent(LogMessage(debug,> server-handle-next-server-request))
+Got request: UnlistenToEvents()
+Reading next message from client.
+Sending msg to client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239: (12,ReceivedResponse())
+Got request: UnlistenToValue(AttributeKey[play.forkrun.protocol.ForkConfig]("playForkConfig") in Scope(Build: file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/, , Project: ProjectReference(file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/,root)))
+Reading next message from client.
+Got request: UnlistenToValue(AttributeKey[play.runsupport.Reloader$CompileResult]("playForkReload") in Scope(Build: file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/, , Project: ProjectReference(file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/,root)))
+Reading next message from client.
+Client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239 EOF, shutting down.
+Stopping client.
+Client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239 thread exiting.
+Dropping message (13,ReceivedResponse()) to dead client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239
+Dropping message (14,ReceivedResponse()) to dead client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239
+Dropping message (0,ReceivedResponse()) to dead client play-fork-run-aaf4e1c4-e2ba-4b30-b372-d058ee358239
