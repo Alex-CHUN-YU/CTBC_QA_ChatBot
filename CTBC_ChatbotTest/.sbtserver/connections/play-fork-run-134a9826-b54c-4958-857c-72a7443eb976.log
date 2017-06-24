@@ -100,3 +100,13 @@ Sending msg to client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976: Detach
 Sending msg to client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976: DetachedLogEvent(LogMessage(debug,> server-send-ready-for-request))
 Sending msg to client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976: BuildLoaded()
 Sending msg to client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976: DetachedLogEvent(LogMessage(debug,> server-handle-next-server-request))
+Got request: UnlistenToEvents()
+Reading next message from client.
+Sending msg to client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976: (4,ReceivedResponse())
+Got request: ListenToValue(AttributeKey[play.forkrun.protocol.ForkConfig]("playForkConfig") in Scope(Build: file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/, , Project: ProjectReference(file:/C:/Users/Alex/Desktop/dangod/CTBC_ChatbotTest/,root)))
+Reading next message from client.
+Client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976 closed, java.net.SocketException: Software caused connection abort: recv failed, shutting down
+Stopping client.
+Client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976 thread exiting.
+Dropping message (5,ReceivedResponse()) to dead client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976
+Dropping message (0,ReceivedResponse()) to dead client play-fork-run-134a9826-b54c-4958-857c-72a7443eb976
