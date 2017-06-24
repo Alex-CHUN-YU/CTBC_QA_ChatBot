@@ -1,5 +1,0 @@
-New log file opened at Sat Jun 24 10:44:18 CST 2017 by 2100@DESKTOP-NLGDLL8
-Sending msg to client play-fork-run-de1bae15-e6f3-4025-86b2-be3b3e3d08c8: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\connections\master.log))
-Sending msg to client play-fork-run-de1bae15-e6f3-4025-86b2-be3b3e3d08c8: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\master.log))
-Sending msg to client play-fork-run-de1bae15-e6f3-4025-86b2-be3b3e3d08c8: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\connections\play-fork-run-de1bae15-e6f3-4025-86b2-be3b3e3d08c8.log))
-Reading next message from client.
