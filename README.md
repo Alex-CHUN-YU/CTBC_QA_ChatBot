@@ -10,7 +10,7 @@ Input:</br>
 4.輸入run(test)
 5.開啟UI資料夾內的index2.html
 6.輸入句子進行測試(EX:如何申請預借現金密碼？)
-註:CTBC_ChatbotTest\TestFile.txt如有新增句子，可透過TermWeightProduce.java來產生新的權重表
+註:CTBC_ChatbotTest\TestFile.txt如有新增句子，可透過CTBC_ChatbotTest\app\CTBC_Main\TermWeightProduce.java來產生新的權重表
 ```
 Output:</br>
 ```
