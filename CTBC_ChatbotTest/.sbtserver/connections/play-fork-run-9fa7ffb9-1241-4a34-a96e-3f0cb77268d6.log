@@ -1,0 +1,9 @@
+New log file opened at Sat Jun 24 10:33:52 CST 2017 by 2100@DESKTOP-NLGDLL8
+Sending msg to client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\connections\master.log))
+Sending msg to client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\connections\play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6.log))
+Sending msg to client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Alex\Desktop\dangod\CTBC_ChatbotTest\.sbtserver\master.log))
+Reading next message from client.
+Client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6 closed, java.net.SocketException: Software caused connection abort: recv failed, shutting down
+Stopping client.
+Dropping message (0,ReceivedResponse()) to dead client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6
+Client play-fork-run-9fa7ffb9-1241-4a34-a96e-3f0cb77268d6 thread exiting.
