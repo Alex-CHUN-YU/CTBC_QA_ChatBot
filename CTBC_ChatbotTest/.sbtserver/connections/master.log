@@ -1,1 +1,37 @@
 New log file opened at Sat Jun 24 19:12:20 CST 2017 by 7836@DESKTOP-7I1L4KP
+Taking next connection to: 56323
+New client attempting to connect on port: 56324-56323
+  Address = /192.168.82.12:56323
+This client on port 56324 has uuid 3ee1670e-d118-457c-aca0-86ccf773e574 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-3ee1670e-d118-457c-aca0-86ccf773e574
+Taking next connection to: 56323
+New client attempting to connect on port: 56379-56323
+  Address = /192.168.82.12:56323
+Handshake exception on socket: 56379
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 56323
+New client attempting to connect on port: 56380-56323
+  Address = /192.168.82.12:56323
+This client on port 56380 has uuid 7e7d0b66-a039-4c1e-807b-f359c51095d4 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-7e7d0b66-a039-4c1e-807b-f359c51095d4
+Taking next connection to: 56323
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 7836@DESKTOP-7I1L4KP logs at Sat Jun 24 19:16:15 CST 2017, goodbye.

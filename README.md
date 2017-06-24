@@ -6,7 +6,7 @@ Input:</br>
 ```
 1.下載 https://drive.google.com/file/d/0B4rlWa2S_JMBckFvNlVzc3BpWVk/view?usp=sharing
 2.將 typesafe-activator-1.3.12 資料夾的 bin 目錄放到環境變數的 PATH 中
-3.開啟cmd, 進入CTBC_ChatbotTest 執行activator()
+3.開啟cmd, 進入CTBC_ChatbotTest 執行activator
 4.輸入run(test)
 5.開啟UI資料夾內的index2.html
 6.輸入句子進行測試(EX:如何申請預借現金密碼？)
