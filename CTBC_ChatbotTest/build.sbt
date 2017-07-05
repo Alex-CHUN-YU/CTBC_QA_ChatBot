@@ -1,4 +1,4 @@
-name := """SpanishCeateBackendServer"""
+name := """CTBC_ChatbotTest"""
 
 version := "1.0-SNAPSHOT"
 
