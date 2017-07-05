@@ -1,1 +1,7 @@
-New log file opened at Sat Jun 24 20:44:29 CST 2017 by 7248@DESKTOP-NLGDLL8
+New log file opened at Wed Jul 05 19:32:44 CST 2017 by 8580@DESKTOP-7I1L4KP
+Taking next connection to: 52250
+New client attempting to connect on port: 52251-52250
+  Address = /192.168.82.12:52250
+This client on port 52251 has uuid d2cb62a0-a45e-47b6-831a-3edd85148152 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-d2cb62a0-a45e-47b6-831a-3edd85148152
+Taking next connection to: 52250

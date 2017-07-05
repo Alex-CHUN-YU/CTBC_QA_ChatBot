@@ -176,8 +176,7 @@ public class DA {
      */
     private static void stopDictionary() {
             try {
-                readStopDic("stopWord",
-                        getBufferedReader("stopWord" + FILE_EXTENTION));
+                readStopDic(getBufferedReader("stopWord" + FILE_EXTENTION));
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -186,12 +185,11 @@ public class DA {
 
     /**
      * Read all content from a dictionary file.
-     * @param entityName entity name, Example: QW(question word)
      * @param reader file reader for a dictionary file
      * @throws IOException if anything goes wrong when read dictionary file
      */
     @SuppressWarnings("unchecked")
-    private static void readStopDic(final String entityName, final BufferedReader reader)
+    private static void readStopDic(final BufferedReader reader)
             throws IOException {
         while (reader.ready()) {
             stopWordSet.add(reader.readLine());
