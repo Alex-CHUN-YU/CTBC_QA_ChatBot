@@ -1,5 +1,5 @@
 # CTBC ChatBot Q&A Test
-![demo](https://github.com/Alex-CHUN-YU/DanGod/blob/master/UI/demo.png)</br></br></br>
+![demo](https://github.com/Alex-CHUN-YU/CTBC_QA_ChatBot/blob/master/UI/demo.png)</br></br></br>
 CTBC ChatBot Q&A Test 主要以中國信託問答集為聊天對象。CTBC_ChatbotTest\TestFile.txt 中的問句為Train之資料集。問答資料集是由中國信託Crawler(CTBC_ChatbotTest\CTBC_QA_Crawler)所爬取下來的例句，由於題目有些敘述不清，故必須做些人工修正。此為簡單架構圖(https://github.com/Alex-CHUN-YU/DanGod/wiki)</br>
 ## 使用方式
 Input:</br>
