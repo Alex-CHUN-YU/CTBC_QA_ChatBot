@@ -1,3 +1,5 @@
+__author__ = "ALEX-CHUN-YU (P76064538@mail.ncku.edu.tw)"
+
 import requests
 from bs4 import BeautifulSoup
 import json

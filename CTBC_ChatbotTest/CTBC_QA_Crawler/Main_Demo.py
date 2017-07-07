@@ -1,3 +1,5 @@
+__author__ = "ALEX-CHUN-YU (P76064538@mail.ncku.edu.tw)"
+
 from CTBC_Crawler1 import Crawler as Crawler1
 from CTBC_Crawler2 import Crawler as Crawler2
 

@@ -1,19 +1,13 @@
-New log file opened at Wed Jul 05 20:00:04 CST 2017 by 784@DESKTOP-7I1L4KP
-Taking next connection to: 52845
-New client attempting to connect on port: 52846-52845
-  Address = /192.168.82.12:52845
-This client on port 52846 has uuid 16dcc72d-9572-4b62-9ca1-4d09dd20aa48 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-16dcc72d-9572-4b62-9ca1-4d09dd20aa48
-Taking next connection to: 52845
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52845
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 52845
-New client attempting to connect on port: 52856-52845
-  Address = /192.168.82.12:52845
-Handshake exception on socket: 52856
+New log file opened at Fri Jul 07 10:30:05 CST 2017 by 5844@DESKTOP-7I1L4KP
+Taking next connection to: 58013
+New client attempting to connect on port: 58014-58013
+  Address = /192.168.82.12:58013
+This client on port 58014 has uuid ebdbaab4-9444-4b33-b29b-1b3fb9bb27d7 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-ebdbaab4-9444-4b33-b29b-1b3fb9bb27d7
+Taking next connection to: 58013
+New client attempting to connect on port: 58025-58013
+  Address = /192.168.82.12:58013
+Handshake exception on socket: 58025
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -29,15 +23,15 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 52845
-New client attempting to connect on port: 52857-52845
-  Address = /192.168.82.12:52845
-This client on port 52857 has uuid 43d57476-2bc1-470b-9a26-a6a5f94d9817 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-43d57476-2bc1-470b-9a26-a6a5f94d9817
-Taking next connection to: 52845
+Taking next connection to: 58013
+New client attempting to connect on port: 58026-58013
+  Address = /192.168.82.12:58013
+This client on port 58026 has uuid bcb57071-5a3c-4518-9dd5-8e2e7832eb8b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-bcb57071-5a3c-4518-9dd5-8e2e7832eb8b
+Taking next connection to: 58013
 Checking to see if clients are empty...
 No non-daemon clients connected after 3 min. Shutting down.
 Server socket thread exiting.
 0 clients open, will close them...
 All client sockets have been closed.
-Closing the 784@DESKTOP-7I1L4KP logs at Wed Jul 05 20:09:15 CST 2017, goodbye.
+Closing the 5844@DESKTOP-7I1L4KP logs at Fri Jul 07 10:33:37 CST 2017, goodbye.
