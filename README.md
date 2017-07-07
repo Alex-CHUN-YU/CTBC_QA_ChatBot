@@ -9,8 +9,9 @@ Input:</br>
 2.將 typesafe-activator-1.3.12 資料夾的 bin 目錄放到環境變數的 PATH 中
 3.開啟cmd, 進入CTBC_ChatbotTest 執行activator
 4.輸入run(test)
-5.開啟UI資料夾內的index2.html
-6.輸入句子進行測試(EX:如何申請預借現金密碼？)
+5.確認開啟ip(由於第一次載入，故會比較久..)
+6.開啟UI資料夾內的index2.html
+7.輸入句子進行測試(EX:如何申請預借現金密碼？)
 註:CTBC_ChatbotTest\TestFile.txt如有新增句子，可透過CTBC_ChatbotTest\app\CTBC_Main\TermWeightProduce.java來產生新的權重表
 ```
 Output:</br>
