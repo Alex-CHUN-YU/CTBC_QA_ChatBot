@@ -1,13 +1,13 @@
-New log file opened at Fri Jul 07 10:30:05 CST 2017 by 5844@DESKTOP-7I1L4KP
-Taking next connection to: 58013
-New client attempting to connect on port: 58014-58013
-  Address = /192.168.82.12:58013
-This client on port 58014 has uuid ebdbaab4-9444-4b33-b29b-1b3fb9bb27d7 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-ebdbaab4-9444-4b33-b29b-1b3fb9bb27d7
-Taking next connection to: 58013
-New client attempting to connect on port: 58025-58013
-  Address = /192.168.82.12:58013
-Handshake exception on socket: 58025
+New log file opened at Fri Jul 07 11:34:22 CST 2017 by 3604@DESKTOP-7I1L4KP
+Taking next connection to: 59212
+New client attempting to connect on port: 59213-59212
+  Address = /192.168.82.12:59212
+This client on port 59213 has uuid fa70180a-6ae9-4178-a3e0-071d5ab5f1b2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-fa70180a-6ae9-4178-a3e0-071d5ab5f1b2
+Taking next connection to: 59212
+New client attempting to connect on port: 59214-59212
+  Address = /192.168.82.12:59212
+Handshake exception on socket: 59214
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -23,15 +23,15 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 58013
-New client attempting to connect on port: 58026-58013
-  Address = /192.168.82.12:58013
-This client on port 58026 has uuid bcb57071-5a3c-4518-9dd5-8e2e7832eb8b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-bcb57071-5a3c-4518-9dd5-8e2e7832eb8b
-Taking next connection to: 58013
+Taking next connection to: 59212
+New client attempting to connect on port: 59215-59212
+  Address = /192.168.82.12:59212
+This client on port 59215 has uuid 75a2b7a2-50ac-4032-993f-1ca393f8b993 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-75a2b7a2-50ac-4032-993f-1ca393f8b993
+Taking next connection to: 59212
 Checking to see if clients are empty...
 No non-daemon clients connected after 3 min. Shutting down.
 Server socket thread exiting.
 0 clients open, will close them...
 All client sockets have been closed.
-Closing the 5844@DESKTOP-7I1L4KP logs at Fri Jul 07 10:33:37 CST 2017, goodbye.
+Closing the 3604@DESKTOP-7I1L4KP logs at Fri Jul 07 11:37:43 CST 2017, goodbye.

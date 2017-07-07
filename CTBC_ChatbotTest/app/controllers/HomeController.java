@@ -40,7 +40,6 @@ public class HomeController extends Controller {
         }
         //Ajax Authentication
         try {
-
             response().setHeader("Access-Control-Allow-Origin", "*");
             response().setHeader("Allow", "*");
             response().setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
